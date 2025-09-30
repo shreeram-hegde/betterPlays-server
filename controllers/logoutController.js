@@ -10,7 +10,7 @@ const handleLogout = async (req, res) => {
     const foundUser = await User.findOne({refreshToken}).exec();
 
     if(!foundUser){
-        res.clearCookie('jwt', {httpOnly: true, sameSite: 'None', secure: false}); //Gotta make secure true for the prod
+        res.clearCookie('jwt', {httpOnly: true, sameSite: 'None', secure: true}); //Gotta make secure true for the prod
         res.sendStatus(204);
     }
 
@@ -19,7 +19,7 @@ const handleLogout = async (req, res) => {
     const result = await foundUser.save();
     console.log(result); //Gotta delete this
 
-    res.clearCookie('jwt', { httpOnly: true, sameSite: 'None', secure: false }); //Gotta change this, make secure:true for the prod
+    res.clearCookie('jwt', { httpOnly: true, sameSite: 'None', secure: true }); //Gotta change this, make secure:true for the prod
     res.sendStatus(204);
 
 }
