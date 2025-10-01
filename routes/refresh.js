@@ -3,6 +3,6 @@ import handleRefreshToken from "../controllers/refreshTokenController.js";
 
 const refreshRoute = express.Router();
 
-refreshRoute.get('/',handleRefreshToken);
+refreshRoute.post('/',handleRefreshToken);
 
 export default refreshRoute;

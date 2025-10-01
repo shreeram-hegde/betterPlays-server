@@ -29,23 +29,23 @@ const userSchema = new mongoose.Schema({
     },
 
     //Games related fields
-    currentlyPlaying: [
-        {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: "Game",
-        },
+      currentlyPlaying: [
+    {
+      game: { type: mongoose.Schema.Types.ObjectId, ref: "Game" },
+      dateAdded: { type: Date, default: Date.now }
+        }
     ],
     completedGames: [
         {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: "Game",
-        },
+        game: { type: mongoose.Schema.Types.ObjectId, ref: "Game" },
+        dateAdded: { type: Date, default: Date.now }
+        }
     ],
     wishList: [
         {
-            type: mongoose.Schema.Types.ObjectId, 
-            ref: "Game",
-        },
+        game: { type: mongoose.Schema.Types.ObjectId, ref: "Game" },
+        dateAdded: { type: Date, default: Date.now }
+        }
     ],
 
     //Auth

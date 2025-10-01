@@ -7,9 +7,11 @@ import authRouter from "./routes/login.js";
 import refreshRoute from "./routes/refresh.js";
 import logOutRoute from "./routes/logout.js";
 import gamesRouter from "./routes/games.js";
+import gameDetailsRouter from "./routes/gameDetails.js";
 import cookieParser from "cookie-parser";
 const PORT = 3500;
 import cors from "cors";
+import userDataRouter from "./routes/userData.js";
 
 
 
@@ -30,6 +32,8 @@ app.use('/login',authRouter);
 app.use('/refresh',refreshRoute);
 app.use('/logout',logOutRoute);
 app.use('/api/games',gamesRouter);
+app.use('/api/details',gameDetailsRouter);
+app.use('/api/data',userDataRouter);
 
 app.listen(PORT, ()=> console.log(`Server running on port ${PORT}`));
 
