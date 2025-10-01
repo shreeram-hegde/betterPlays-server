@@ -22,7 +22,6 @@ const handleNewUser = async (req, res) => {
             password: hashedPwd
         });
 
-        console.log(result);//Gotta remove this
         
         res.status(201).json({'success': `New user ${user} with Email ${mail} created`});
 

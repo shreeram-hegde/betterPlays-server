@@ -11,7 +11,6 @@ const getGames = async (req, res) => {
 
     let response;
     if (search) {
-      console.log("with search");
       response = await axios.get(`${RAWG_BASE_URL}/games`, {
         params: {
           key: process.env.RAWG_API_KEY,
@@ -20,7 +19,6 @@ const getGames = async (req, res) => {
         },
       });
     } else {
-      console.log("without search");
       response = await axios.get(`${RAWG_BASE_URL}/games`, {
         params: {
           key: process.env.RAWG_API_KEY,

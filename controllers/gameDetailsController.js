@@ -3,7 +3,6 @@ import axios from "axios";
 const RAWG_BASE_URL = "https://api.rawg.io/api";
 
 const handleDetails = async (req, res) =>{
-    console.log("details");
     try{
         const {id} = req.query;
         if(!id) res.sendStatus(400);

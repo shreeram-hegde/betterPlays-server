@@ -24,7 +24,6 @@ const handleLogin = async (req, res) =>{
         //saving it to the user
         foundUser.refreshToken = refreshToken;
         const result = await foundUser.save();
-        console.log(result); //Gotta remove this
         //Creates Secure Cookie with refresh token
         res.cookie('jwt',refreshToken,{httpOnly : true, secure:true, sameSite:'None',maxAge: 24*60*60*7*1000}); //Gotta change this to secure:true in prod
         //Send access token to user

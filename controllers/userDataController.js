@@ -2,13 +2,9 @@ import User from "../model/User.js";
 import Game from "../model/Game.js";
 
 const handleGameData = async (req, res) => {
-    console.log("reached here");
   try {
     const { id, title, background_image, tab } = req.body;
     const username = req.user; // from JWT middleware
-
-
-    console.log("id: ", id, "title: ",title, "backgroud_image: ",background_image, "the tab: ", tab);
 
     if (!id || !title) return res.status(400).json({ message: "Game id and title are required" });
 
