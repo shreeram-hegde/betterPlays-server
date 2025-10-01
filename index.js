@@ -19,9 +19,11 @@ connectDB();
 const app = express();
 
 app.use(cors({
-  origin: "http://localhost:8080", // your frontend URL
+  origin: ["http://localhost:8080", "https://betterplays.vercel.app"], // your frontend URL
   credentials: true               // allow cookies
 }));
+
+
 //middle-ware for json
 app.use(express.json());
 //middleware for cookie-parsing
