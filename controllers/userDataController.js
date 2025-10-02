@@ -25,7 +25,7 @@ const handleGameData = async (req, res) => {
         //check if the game already exists in the given tab for the given user
         const alreadyExists = foundUser[tab].some(
                     (entry) => entry.game.toString() === game._id.toString());
-        if(alreadyExists) return res.status(409).json({"message": "Its already in the given tab"});
+        if(alreadyExists) return res.status(409).json({"error": "Its already in the given tab"});
     }
 
    
